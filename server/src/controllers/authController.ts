@@ -34,7 +34,7 @@ function generateToken(user){
         id:user.id,
         email:user.email,
     },
-"12345",
+process.env.SECRET,
 {
     expiresIn:"1h"
 })
