@@ -17,7 +17,7 @@ mongoose
 app.get('/',(req:Request,res:Response)=>{
     res.send('server is running with typescript')
 })
-app.post('/register',router)
+app.use('/api',router)
 app.listen(PORT,()=>{
     console.log(`server is running on ${PORT}`)
 })
