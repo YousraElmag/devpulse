@@ -4,11 +4,12 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Signup from './component/Signup'
-
+import { Login } from './component/Login'
 function App() {
   return (
     <>
     <Signup/>
+    <Login/>
     </>
   )
 }

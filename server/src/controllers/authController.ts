@@ -42,17 +42,20 @@ process.env.SECRET,
 export const login=async(req:Request,res:Response)=>{
     try{
         const {email,password}=req.body;
-        const user=await UserModel.findOne({email:req.body.email})
+        const user=await UserModel.findOne({email})
         const comparePassword=await bcrypt.compare(req.body.password,user.password)
       if(comparePassword){
 
 const token=generateToken(user);
 res.status(200).json({
+    message:"login successful",
     token,
     role:user.role,
     id:user.id,
     emailAddress:user.email,
 })
+      }else{
+        res.status(400).json({message:"invaild email or password"})
       }
     }catch(err){
         res.status(500).json({
