@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { handleLoginService } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
 export const Login=()=>{
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState('')
     const [success,setSuccess]=useState('')
     const [error,setError]=useState('');
+      const navigate=useNavigate();
 
     const handleSubmit=async(e:React.FormEvent)=>{
         e.preventDefault();
@@ -17,6 +19,7 @@ export const Login=()=>{
                 console.log('yes')
                 setSuccess('login successful');
                 localStorage.setItem('token',data.token)
+                  navigate("/dashboard");
 
             }else{
                 setError('login faild')

@@ -63,3 +63,16 @@ res.status(200).json({
         })
     }
 }
+
+export const getMe=async(req:Request,res:Response)=>{
+    try{
+        res.status(200).json({
+            valid:true,
+            user:(req as any).user
+
+        })
+        
+    }catch(error:any){
+        res.status(500).json({message:error.message})
+    }
+}

@@ -1,16 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { BrowserRouter, Routes, Route } from 'react-router-dom' 
 import './App.css'
 import Signup from './component/Signup'
 import { Login } from './component/Login'
+import { Welcome } from './pages/Welcome'
+
 function App() {
   return (
-    <>
-    <Signup/>
-    <Login/>
-    </>
+
+    
+      <Routes>
+
+        <Route path="/" element={<Welcome />} />
+        
+
+        <Route path="/login" element={<Login />} />
+        
+     
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+ 
   )
 }
 
