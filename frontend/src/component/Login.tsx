@@ -19,6 +19,7 @@ export const Login=()=>{
                 console.log('yes')
                 setSuccess('login successful');
                 localStorage.setItem('token',data.token)
+                localStorage.setItem('userId', data.id);
                   navigate("/dashboard");
 
             }else{
