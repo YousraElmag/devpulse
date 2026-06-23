@@ -4,6 +4,7 @@ import './App.css'
 import Signup from './component/Signup'
 import { Login } from './component/Login'
 import { Welcome } from './pages/Welcome'
+import { Dashboard } from './component/Dashboard'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         
      
         <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
  
   )

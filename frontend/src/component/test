@@ -1,0 +1,92 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+export const Dashboard: React.FC = () => {
+    const navigate = useNavigate();
+
+    // دالة تسجيل الخروج: تمسح التوكن وترجعك للـ Welcome
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/');
+    };
+
+    return (
+        // الخلفية الغامقة العميقة للموقع كله (Midnight Blue/Slate)
+        <div className="min-h-screen bg-[#0f172a] text-slate-100 flex font-sans overflow-hidden">
+            
+            {/* 👈 الجزء الأول: الـ Sidebar (الشريط الجانبي) */}
+            <aside className="w-64 bg-[#111827] border-r border-slate-800 p-6 flex flex-col justify-between hidden md:flex">
+                <div>
+                    {/* اللوجو والاسم المتوهج */}
+                    <div className="flex items-center space-x-2 mb-8">
+                        <span className="text-2xl text-blue-400">⚡</span>
+                        <h1 className="text-xl font-bold tracking-wider bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                            DevPulse
+                        </h1>
+                    </div>
+                    
+                    {/* القائمة الجانبية */}
+                    <nav className="space-y-1">
+                        <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl bg-indigo-600/20 text-indigo-400 font-medium border border-indigo-500/30 text-left">
+                            <span>📊</span> <span>Dashboard</span>
+                        </button>
+                        <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-slate-800/50 hover:text-slate-200 transition text-left">
+                            <span>📁</span> <span>Projects</span>
+                        </button>
+                        <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-slate-800/50 hover:text-slate-200 transition text-left">
+                            <span>🌐</span> <span>Repository</span>
+                        </button>
+                        <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-slate-800/50 hover:text-slate-200 transition text-left">
+                            <span>📈</span> <span>Analytics</span>
+                        </button>
+                    </nav>
+                </div>
+
+                {/* زرار الـ Logout في أسفل السايد بار */}
+                <button 
+                    onClick={handleLogout}
+                    className="flex items-center space-x-3 px-4 py-3 rounded-xl text-red-400 hover:bg-red-950/20 hover:border hover:border-red-900/30 transition text-left cursor-pointer w-full"
+                >
+                    <span>🚪</span> <span>Logout</span>
+                </button>
+            </aside>
+
+            {/* 👉 الجزء الثاني: المساحة اليمنى بالكامل (Navbar + Content) */}
+            <div className="flex-1 flex flex-col h-screen overflow-y-auto">
+                
+                {/* 🔽 الشريط العلوي (Navbar) */}
+                <header className="h-16 bg-[#111827]/80 backdrop-blur-md border-b border-slate-800 px-8 flex items-center justify-between sticky top-0 z-10">
+                    <div className="flex items-center bg-slate-800/40 border border-slate-700/50 rounded-xl px-3 py-1.5 w-64">
+                        <span className="text-gray-500 text-sm mr-2">🔍</span>
+                        <input type="text" placeholder="Search..." className="bg-transparent text-sm focus:outline-none w-full text-slate-300" />
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                        <span className="text-gray-400 cursor-pointer hover:text-slate-200">🔔</span>
+                        <span className="text-gray-400 cursor-pointer hover:text-slate-200">💬</span>
+                        <div className="flex items-center space-x-3 border-l border-slate-800 pl-4">
+                            <div className="text-right">
+                                <p className="text-sm font-medium text-slate-200">Yousra</p>
+                                <p className="text-[10px] text-indigo-400 font-mono">Full-Stack Dev</p>
+                            </div>
+                            <div className="h-9 w-9 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 border border-indigo-400/30 flex items-center justify-center font-bold text-white text-sm shadow-md shadow-indigo-500/10">
+                                Y
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                {/* 🎯 مساحة المحتوى الرئيسي (هيركب فيها الكروت والـ Charts) */}
+                <main className="flex-1 p-8 space-y-8">
+                    <div className="text-left">
+                        <h2 className="text-2xl font-bold tracking-tight text-slate-100">Dashboard</h2>
+                        <p className="text-xs text-gray-400 mt-1">Mockup view ready for layout integration.</p>
+                    </div>
+                    
+                    {/* هنا هنحط الكروت في الخطوة الجاية */}
+
+                </main>
+            </div>
+        </div>
+    );
+};
