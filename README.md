@@ -44,7 +44,7 @@ DevPulse is a modern, secure, and dynamic dashboard designed for developers to v
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/DevPulse.git](https://github.com/your-username/DevPulse.git)
+   git clone [https://github.com/YousraElmag/devpulse.git]
 2. **Backend Setup**
      cd server
 npm install
