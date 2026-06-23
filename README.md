@@ -79,4 +79,4 @@ npm install
 
 | Dashboard Interface | GitHub Insights |
 | :--- | :--- |
-| ![Dashboard](<img width="1440" height="798" alt="Image" src="https://github.com/user-attachments/assets/86d9bb9e-d5a9-478c-9ab5-914651e6674b" />) | ![Insights](<img width="1440" height="798" alt="Image" src="https://github.com/user-attachments/assets/cfd1eca7-a7bd-4947-8ef7-e10f9ea3123e" />) |
+| <img src="https://github.com/user-attachments/assets/86d9bb9e-d5a9-478c-9ab5-914651e6674b" width="400"/> | <img src="https://github.com/user-attachments/assets/cfd1eca7-a7bd-4947-8ef7-e10f9ea3123e" width="400"/> |
